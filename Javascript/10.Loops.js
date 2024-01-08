@@ -112,7 +112,7 @@ for (const i of greetings) { // (++) esob deya lage na
   and so on...
   */
 
-  // Map (it is like a object)
+  // Map (it is like object)
   const map = new Map() 
   map.set('IN' , "India")  // IN(key) , India(value) ; first one key,second one value
   map.set('UK' , "United Kingdom") 
@@ -126,7 +126,10 @@ for (const i of greetings) { // (++) esob deya lage na
     'IN' => 'India',
     'UK' => 'United Kingdom',
     'Arg' => 'Argentina'
-  } */
+  } 
+  -- we use map for making a  new array
+  -- we use foreach for doing a operation
+  */
   
   
   /*for (const key of map) {
@@ -176,20 +179,4 @@ for (const key in myObject) {
     }
 
 
- //for each
-//1st method
-const coding = ["jambo","tamboo","mamboo"]
-coding.forEach( function (item){
-  console.log(item);
-})
-
-//2nd method
-coding.forEach(greet =(i) => {
-  console.log(i);
-})
-
-//3rd method
-function Printme(value){
-   console.log(value);
-}
-coding.forEach(Printme)
+ 
