@@ -22,24 +22,24 @@ coding.forEach((value,index,array)=>{
 })
 //multiple objects inside array, important to learn this
 // accessing object inside array
-const webDev = [
+const myCoding = [
   {
-    markup: "Html",
-    design: "Css"
+      languageName: "javascript",
+      languageFileName: "js"
   },
   {
-    programming : "javascript",
-    fastProgramming : "typescript"
+      languageName: "java",
+      languageFileName: "java"
   },
   {
-    library : "React",
-    framework : "Nextjs"
-  }
+      languageName: "python",
+      languageFileName: "py"
+  },
 ]
-webDev.forEach((item)=>{
-  console.log(item.library);
-})
 
+myCoding.forEach( (item) => {  
+  console.log(item.languageName);
+} );
 
 /* most common operation need to know (filter)
 filter requirenents
@@ -78,7 +78,7 @@ const books = [
 
 // let userBooks = books.filter((bk)=> bk.genre === "Science")
 // console.log(userBooks);
-const userBooks=books.filter((bk)=>{return bk.publish >=1995 && bk.genre === "History"})
+const userBooks=books.filter((bk)=>{return bk.publish >=1995 && bk.genre === "History"}) // 1995 er por published & genre :History .need to fullfill 2 requirements
 console.log(userBooks); /* 
 ans :   [
   {
@@ -111,10 +111,31 @@ console.log(newNumbers);
 
 // Reduce
 const collection = [1,2,3]
-// const Total = collection.reduce((accumulator,currentValue)=>{
-//   console.log(`Accumulator: ${accumulator} & CurrentValue${currentValue}`);
-//   return accumulator+currentValue
-// },5)
-// console.log(Total);
+/*const Total = collection.reduce((accumulator,currentValue)=>{
+  console.log(`Accumulator: ${accumulator} & CurrentValue${currentValue}`);
+  return accumulator+currentValue
+},5(accumulator))
+console.log(Total); 
+
+ans : Accumulator: 5 & CurrentValue: 1
+      Accumulator: 6 & CurrentValue: 2
+      Accumulator: 8 & CurrentValue: 3
+*/
 const Total = collection.reduce((acc,curr) => acc+curr,2)
-console.log(Total); // initial value ta nibe(1) tarpor 2 sum korbe,setar result er sathe 3 sum korbe.erpor comma diye joto dibo toto add korbe
+console.log(Total); // initial value ta nibe(1) tarpor 2 sum korbe,setar result er sathe 3 sum korbe.erpor comma diye joto dibo(2) toto add korbe
+
+//MDN example
+const array1 = [1, 2, 3, 4];
+// 0 + 1 + 2 + 3 + 4
+const initialValue = 0;
+const sumWithInitial = array1.reduce(
+  (accumulator, currentValue) => accumulator + currentValue,
+  initialValue,
+);
+console.log(sumWithInitial);
+/* ans : 10
+  Explanation:
+  accumulator is the initial value(0),currentvalue is(1) first time operation.because whatever you give the initial value first time it goes inside accumulator
+  now, first operation, accumulator:0, currentvalue:1.now totalValue :1(accumulator for next operation),& it goes on..[accuumulator dont take further value from initial value] 
+  now, accumulator :1 , CurrentValue : 2, totalValue :3 (now it becomes accumulator for next operation) .. so on..after sum like that process, final will be 10, that is the answer
+ */

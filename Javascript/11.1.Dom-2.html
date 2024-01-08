@@ -1,0 +1,130 @@
+<!--3rd part-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dom learning</title>
+</head>
+<body style="background-color: cadetblue;">
+<div class="parent">
+  <div class="day">Monday</div>
+  <div class="day">Tuesday</div>
+  <div class="day">Wednesday</div>
+  <div class="day">Thursday</div>
+</div>
+</body>
+<script>
+  const parent = document.querySelector(".parent")
+  // if you give h2.querySelector gives you first h2 concluding all h2
+  // console.log(parent);
+  // console.log(parent.children[1].innerHTML); access any day. 0 is Monday by index no
+
+   // parent is giving HTMl collection, foreach loop will not run here but classic for loop can be run
+  for (let i = 0; i < parent.children.length; i++) {
+    console.log(parent.children[i].innerHTML);
+  }
+ 
+  parent.children[1].style.color = "orange" // children[1] meanse Monday
+  console.log(parent.firstElementChild); // firstElementChild means Monday
+  console.log(parent.lastElementChild); // Thursday
+  const dayOne= document.querySelector('.day')
+  console.log(dayOne.parentElement);
+  console.log(dayOne.nextElementSibling); // next element dekhabe. monday er pore wednesday
+
+  console.log("NODES :", parent.childNodes); 
+  /*
+  will show the Nodelist(9)-- but Mon,Tue... there are 4, so where are the extra 5 coming from?? because of giving space after giving div in each line
+  [Note : but if you give multiple whitespaces, it will still count as same as previous, not count the extra whitespaces]
+  */
+</script>
+</html>
+
+
+<!--4th part-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chai aur Code</title>
+</head>
+<body style="background-color: cadetblue;">
+  
+</body>
+
+<script>
+  // creating element
+ const div=document.createElement('div')
+  console.log(div);
+  /* setting attributes & adding design
+  div.className = "main"
+  div.id = Math.round(Math.random() * 10 +1)
+  div.setAttribute("title", "New title") */
+  div.style.backgroundColor = "yellow"
+  div.style.padding = "12px"
+  div.style.borderRadius = "10px"
+  // div.innerText = "chai aur code" -- not optimized way,it doing overwite
+  const addText = document.createTextNode("chai aur code")
+  div.appendChild(addText) // append use for display the element
+  document.body.append(div) 
+</script>
+</html>
+
+//--5th Part
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM</title>
+</head>
+<body style="background-color: rgb(44, 43, 43); color: #fff">
+  <ul class="language">
+    <li>Javascript</li>
+  </ul> 
+</body>
+
+<script>
+  function addLanguage(langName){
+    const li = document.createElement("li")
+    // li.innerHTML= `${langName}` :- adding language in optimize way
+    li.appendChild(document.createTextNode(langName))
+    document.querySelector(".language").appendChild(li)
+}
+addLanguage("python")
+addLanguage("typescript")
+/* 
+ans : Javascript
+      python
+      typescript
+*/
+
+//Edit -- replacing python with Mojo
+const SecondLang = document.querySelector("li:nth-child(2)") // selected 2nd child (python)
+//secondLang.innerHtml = "Mojo" -- not optimized
+const newli = document.createElement("li")
+newli.textContent ="Mojo"
+SecondLang.replaceWith(newli)
+/* ans :
+          Javascript
+          Mojo
+          typescript
+*/
+
+//edit -- again replacing-- another method
+const firstLang = document.querySelector("li:first-child")
+firstLang.outerHTML = "<li> badscript</li>" //outterHTML dile <li> soho lekhte hobe
+/* ans :
+        badscript
+        Mojo
+        typescript
+*/
+//Removing element
+const lastLang = document.querySelector("li:last-child")
+lastLang.remove()
+/* ans :
+        badscript
+        Mojo
+ */
+</script>
+</html>
