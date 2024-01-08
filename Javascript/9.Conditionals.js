@@ -3,7 +3,7 @@ if (score>50){
   const power = "fly"
   console.log(`power of the user : ${power}`);
 }
-/*if we do same console log in the outside of this scope, jpkhpn curly braces deya hpy tokhon er alada ekta scope count kora hoy ebong sei scope er value gulo sudu oi scope er vitor theke access kora jay,
+/*if we do same console log in the outside of this scope, jpkhpn curly braces deya hoy tokhon er alada ekta scope count kora hoy ebong sei scope er value gulo sudu oi scope er vitor theke access kora jay,
 kintu ekhanei ache var ar const/let er tofat, karon var diye jodi ei same scope ta banano hoto tahole baire thekeo access kora jeto, jeta global scope, seta howa jabena,code scope er baire jaoa jabena ,tahole code safe thakbe */
 console.log(`power of the user : ${"power"}`); // ans : error; because 
 
@@ -26,12 +26,11 @@ console.log(`power of the user : ${"power"}`); // ans : error; because
  > less than 
  =< greater than or equal to 
  >= less than or equal to 
- */
 
- /*
   && = both conditions need to accomplish
   || = one of the two conditions need to acconplish
-  ! = none of the conditions fullfills  */
+  ! = none of the conditions fullfills
+ */
 
 //shorthand
 const balance = 1000
@@ -67,7 +66,6 @@ if (loggedInFromGoogle || loggedInFromEmail){
   console.log("user logged in");
 }
 
-
 /*--- switch in Js ----
 sometimes values needed to checking in multiple times , than the concept came switch
 Use the switch statement to select one of many code blocks to be executed.
@@ -82,7 +80,6 @@ switch(expression) {
   default:
      code block
 }
-
 
 The switch expression is evaluated once.
 The value of the expression is compared with the values of each case.
@@ -109,6 +106,7 @@ switch (month) {
     console.log("default match");
     break;
 }
+// ans : march
 // what happened if it was string? lets see it
 let Month = "april"
 switch (Month) {
